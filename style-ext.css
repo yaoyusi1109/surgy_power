@@ -1,0 +1,1301 @@
+/* =====================================================================
+   SURGY POWER — style-ext.css
+   Extends and overrides style.css with all new sections.
+   - Replaces hero collage with formula-mosaic
+   - Expands KPI band to 5 columns
+   - Adds all new content sections (no PNG slide dependencies)
+   ===================================================================== */
+
+/* ── Extra CSS variable ──────────────────────────────────────────────── */
+:root {
+  --dark-panel: #132a39;
+}
+
+/* ── Global h2 font ──────────────────────────────────────────────────── */
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+/* ── Hero copy sub-paragraph ─────────────────────────────────────────── */
+.hero-sub {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  margin-top: 1rem;
+}
+
+/* ======================================================================
+   FORMULA MOSAIC  (replaces hero PNG collage)
+   ====================================================================== */
+.formula-mosaic {
+  position: relative;
+  min-height: 390px;
+  flex-shrink: 0;
+}
+
+.fm-card {
+  position: absolute;
+  background: var(--dark-panel);
+  border: 1px solid rgba(14, 164, 166, 0.2);
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 18px 34px rgba(10, 30, 45, 0.24);
+}
+
+.fm-label {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: var(--teal);
+  text-transform: uppercase;
+}
+
+.fm-value {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  color: #fff;
+  line-height: 1.1;
+}
+
+.fm-value sub {
+  font-size: 0.6em;
+}
+
+.fm-amber { color: var(--amber); }
+.fm-teal  { color: var(--teal); }
+
+.fm-sub {
+  font-size: 0.77rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.4;
+}
+
+/* Card positions & rotations */
+.fm-c1 {
+  width: min(285px, 78%);
+  top: 0;
+  left: 0;
+  transform: rotate(-2deg);
+  z-index: 2;
+}
+
+.fm-c2 {
+  width: min(215px, 60%);
+  top: 20px;
+  right: 0;
+  transform: rotate(2.4deg);
+  z-index: 3;
+  border-color: rgba(242, 145, 61, 0.25);
+}
+
+.fm-c3 {
+  width: min(205px, 58%);
+  bottom: 85px;
+  left: 22px;
+  transform: rotate(1.2deg);
+  z-index: 4;
+  background: #0c3d4e;
+  border-color: rgba(14, 164, 166, 0.4);
+}
+
+.fm-c4 {
+  width: min(225px, 64%);
+  bottom: 10px;
+  right: 8px;
+  transform: rotate(-1.5deg);
+  z-index: 2;
+}
+
+/* ======================================================================
+   KPI BAND — override to 5 columns
+   ====================================================================== */
+.kpi-band {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.kpi-value {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+}
+
+.kpi-unit {
+  font-size: 1rem;
+}
+
+.kpi-label {
+  font-size: 0.8rem;
+}
+
+/* ======================================================================
+   TECH ORIGIN & COMPOSITION
+   ====================================================================== */
+.tech-origin {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.origin-text p {
+  color: var(--ink-soft);
+  line-height: 1.85;
+  margin-top: 0.85rem;
+}
+
+.origin-text p:first-of-type {
+  margin-top: 0.4rem;
+}
+
+.composition-card {
+  background: var(--dark-panel);
+  border-radius: 18px;
+  padding: 1.5rem 1.75rem;
+  color: #d6e5ef;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.composition-card .eyebrow {
+  color: var(--teal);
+}
+
+.comp-formula {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.25rem, 2.6vw, 1.8rem);
+  color: #fff;
+  margin-top: 0.65rem;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+.comp-formula sub {
+  font-size: 0.62em;
+}
+
+.comp-range {
+  margin: 0.35rem 0 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.1rem;
+  color: var(--amber);
+  letter-spacing: 0.08em;
+}
+
+.comp-states {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.9rem;
+}
+
+.state-pill {
+  font-size: 0.79rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(14, 164, 166, 0.2);
+  border: 1px solid rgba(14, 164, 166, 0.3);
+  color: #10222f;
+}
+
+.comp-note {
+  margin: 0.9rem 0 0;
+  font-size: 0.91rem;
+  color: #94b4ca;
+  line-height: 1.75;
+}
+
+/* ======================================================================
+   PERFORMANCE COMPARISON TABLE
+   ====================================================================== */
+.perf-section {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 0;
+}
+
+.perf-table-wrap {
+  margin-top: 1rem;
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  box-shadow: 0 4px 18px rgba(16, 34, 47, 0.07);
+}
+
+.perf-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.82);
+  font-size: 0.93rem;
+}
+
+.perf-table thead {
+  background: var(--dark-panel);
+  color: #d6e5ef;
+}
+
+.perf-table thead th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  font-weight: normal;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+.perf-table thead .col-ho {
+  color: var(--amber);
+}
+
+.perf-table tbody tr {
+  border-bottom: 1px solid rgba(16, 34, 47, 0.09);
+  transition: background 0.15s;
+}
+
+.perf-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.perf-table tbody tr:hover {
+  background: rgba(14, 164, 166, 0.04);
+}
+
+.perf-table td {
+  padding: 0.75rem 1rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.perf-table td:first-child {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.col-ho {
+  background: rgba(14, 164, 166, 0.06);
+}
+
+.highlight-cell {
+  color: var(--teal) !important;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.table-note {
+  margin: 0.7rem 0 0;
+  font-size: 0.86rem;
+  color: #5d7383;
+}
+
+/* ======================================================================
+   ENERGY RATIO — 900%
+   ====================================================================== */
+.energy-ratio-section {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 0;
+}
+
+.ratio-flow {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.flow-box {
+  border-radius: 16px;
+  padding: 1.3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+}
+
+.flow-input {
+  background: rgba(220, 232, 240, 0.55);
+  border: 1px solid rgba(68, 90, 107, 0.2);
+}
+
+.flow-process {
+  background: rgba(14, 164, 166, 0.08);
+  border: 1px solid rgba(14, 164, 166, 0.25);
+}
+
+.flow-output {
+  background: rgba(242, 145, 61, 0.1);
+  border: 1px solid rgba(242, 145, 61, 0.3);
+}
+
+.flow-label {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+
+.flow-big {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.flow-process .flow-big { color: var(--teal); }
+.flow-output .flow-big  { color: var(--amber); }
+
+.flow-detail {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.flow-arrow {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  color: var(--line);
+  text-align: center;
+  padding: 0 0.2rem;
+}
+
+.ratio-callout {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: var(--dark-panel);
+  border-radius: 18px;
+  padding: 1.5rem 2rem;
+}
+
+.ratio-num {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  color: var(--teal);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ratio-desc p {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.78;
+  color: #94b4ca;
+}
+
+.ratio-desc p:first-child { margin-top: 0; }
+.ratio-desc strong { color: #d6e5ef; }
+
+/* ======================================================================
+   MECHANISM SECTION
+   ====================================================================== */
+.mech-section {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 0;
+}
+
+.mech-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.mech-card {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.83), rgba(236, 245, 250, 0.84));
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 16px;
+  padding: 1.3rem 1.4rem;
+}
+
+.mech-icon {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.mech-card h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--ink);
+}
+
+.mech-eq {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  color: var(--amber);
+  background: rgba(242, 145, 61, 0.08);
+  border-left: 3px solid var(--amber);
+  padding: 0.4rem 0.65rem;
+  border-radius: 0 6px 6px 0;
+  margin: 0.65rem 0;
+}
+
+.mech-card p {
+  margin: 0;
+  font-size: 0.91rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.mech-deep-link {
+  margin-top: 1rem;
+  background: linear-gradient(145deg, rgba(255, 251, 244, 0.9), rgba(226, 243, 250, 0.72));
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.mech-deep-link p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.76;
+  font-size: 0.92rem;
+  max-width: 76ch;
+}
+
+.methodology-visuals {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.methodology-head {
+  grid-column: 1 / -1;
+  background: linear-gradient(145deg, rgba(255, 251, 244, 0.9), rgba(226, 243, 250, 0.7));
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+}
+
+.methodology-head p {
+  margin: 0.45rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.72;
+  font-size: 0.9rem;
+}
+
+.methodology-head .eyebrow {
+  margin-top: 0;
+}
+
+.methodology-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.method-figure {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(10, 30, 45, 0.08);
+}
+
+.method-figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: #fff;
+}
+
+.method-figure figcaption {
+  padding: 0.6rem 0.75rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.method-figure figcaption strong {
+  font-size: 0.81rem;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.method-figure figcaption span {
+  font-size: 0.76rem;
+  color: #5d7383;
+  line-height: 1.45;
+}
+
+/* ======================================================================
+   EVIDENCE MATRIX — section padding update
+   ====================================================================== */
+.matrix-section {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 0;
+}
+
+/* ======================================================================
+   LAB RESULTS TABLE
+   ====================================================================== */
+.lab-section {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 0;
+}
+
+.lab-table-wrap {
+  margin-top: 1rem;
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  box-shadow: 0 4px 18px rgba(16, 34, 47, 0.07);
+}
+
+.lab-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.82);
+  font-size: 0.93rem;
+}
+
+.lab-table thead {
+  background: var(--dark-panel);
+  color: #d6e5ef;
+}
+
+.lab-table thead th {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.98rem;
+  letter-spacing: 0.08em;
+  font-weight: normal;
+}
+
+.lab-table tbody tr {
+  border-bottom: 1px solid rgba(16, 34, 47, 0.09);
+  transition: background 0.15s;
+}
+
+.lab-table tbody tr:last-child { border-bottom: none; }
+
+.lab-table tbody tr:hover {
+  background: rgba(14, 164, 166, 0.04);
+}
+
+.lab-table td {
+  padding: 0.75rem 1.1rem;
+  color: var(--ink-soft);
+}
+
+.lab-highlight {
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.lab-best {
+  color: #10222f;
+  background: rgba(14, 164, 166, 0.2);
+}
+
+.lab-time {
+  color: var(--amber);
+  font-weight: 600;
+}
+
+.lab-snapshot {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.lab-snapshot-card {
+  margin: 0;
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 12px;
+  padding: 0.9rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.lab-snapshot-card span {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.lab-snapshot-card strong {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.lab-bridge {
+  margin-top: 0.9rem;
+  background: linear-gradient(145deg, rgba(255, 251, 244, 0.88), rgba(226, 243, 250, 0.75));
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.lab-bridge p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.76;
+  font-size: 0.92rem;
+  max-width: 72ch;
+}
+
+/* ======================================================================
+   PRODUCTION SPECS
+   ====================================================================== */
+.prod-specs-section {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 0;
+}
+
+.prod-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.prod-card {
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 16px;
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prod-sym {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.4rem;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.prod-num {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.prod-unit {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.88rem;
+  color: var(--amber);
+  letter-spacing: 0.06em;
+}
+
+.prod-desc {
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  margin-top: 0.45rem;
+  line-height: 1.5;
+}
+
+/* ======================================================================
+   INDUSTRIAL CASE STUDY
+   ====================================================================== */
+.case-section {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 0;
+}
+
+.case-proof {
+  margin-top: 0.9rem;
+  background: linear-gradient(145deg, rgba(255, 251, 244, 0.9), rgba(226, 243, 250, 0.65));
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 16px;
+  padding: 1.1rem 1.3rem;
+}
+
+.case-proof p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-size: 0.93rem;
+}
+
+.case-proof-tags {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.case-proof-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.case-proof-tags span {
+  font-size: 0.78rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(14, 164, 166, 0.2);
+  border: 1px solid rgba(14, 164, 166, 0.28);
+  color: #10222f;
+}
+
+.case-overview {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.case-overview-card {
+  margin: 0;
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 12px;
+  padding: 0.9rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.case-overview-card span {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.case-overview-card strong {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.18rem;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.case-bridge {
+  margin-top: 0.9rem;
+  background: linear-gradient(145deg, rgba(255, 251, 244, 0.88), rgba(226, 243, 250, 0.75));
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+}
+
+.case-bridge p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.76;
+  font-size: 0.92rem;
+  max-width: 74ch;
+}
+
+.case-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.case-specs {
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem;
+}
+
+.case-dl { margin: 0; }
+
+.case-row {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.5rem 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(16, 34, 47, 0.09);
+  align-items: baseline;
+}
+
+.case-row:last-child { border-bottom: none; }
+
+.case-row dt {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.case-row dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.case-note {
+  background: linear-gradient(145deg, rgba(255, 251, 244, 0.9), rgba(226, 243, 250, 0.85));
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem;
+}
+
+.case-note h3 {
+  font-size: 1.1rem;
+  margin-top: 0.45rem;
+  color: var(--ink);
+}
+
+.case-note p {
+  margin: 0.7rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.82;
+  font-size: 0.92rem;
+}
+
+.case-milestones {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.milestone-card {
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+}
+
+.milestone-kicker {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.09em;
+  font-size: 0.76rem;
+  color: var(--teal);
+}
+
+.milestone-card h3 {
+  margin: 0.4rem 0 0;
+  font-size: 1.02rem;
+  color: var(--ink);
+}
+
+.milestone-card p {
+  margin: 0.55rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.72;
+  font-size: 0.88rem;
+}
+
+.case-gallery {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.case-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.case-figure {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(10, 30, 45, 0.08);
+}
+
+.case-figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.case-feature img {
+  aspect-ratio: 16 / 11;
+}
+
+.case-figure figcaption {
+  padding: 0.55rem 0.7rem 0.65rem;
+  font-size: 0.77rem;
+  color: #5d7383;
+  line-height: 1.45;
+}
+
+/* ======================================================================
+   SAFETY ARCHITECTURE
+   ====================================================================== */
+.safety-section {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 0;
+}
+
+.safety-intro {
+  margin-top: 0.9rem;
+}
+
+.safety-intro > p {
+  color: var(--ink-soft);
+  line-height: 1.82;
+  max-width: 72ch;
+}
+
+.safety-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.safety-badge {
+  font-size: 0.83rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(14, 164, 166, 0.2);
+  border: 1px solid rgba(14, 164, 166, 0.28);
+  color: #10222f;
+}
+
+.safety-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.safety-item {
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.safety-num {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.6rem;
+  color: var(--teal);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 2.4rem;
+}
+
+.safety-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+
+.safety-item p {
+  margin: 0;
+  font-size: 0.83rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ======================================================================
+   660MW BOILER LAYOUT
+   ====================================================================== */
+.boiler-section {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 0;
+}
+
+.boiler-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.boiler-spec {
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem;
+}
+
+.boiler-dl { margin: 0.6rem 0 0; }
+
+.boiler-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.5rem 0.9rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(16, 34, 47, 0.09);
+  align-items: baseline;
+}
+
+.boiler-row:last-child { border-bottom: none; }
+
+.boiler-row dt {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.boiler-row dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.boiler-zones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.zone-card {
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+  border-left: 4px solid var(--teal);
+  background: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid rgba(16, 34, 47, 0.1);
+  border-right: 1px solid rgba(16, 34, 47, 0.1);
+  border-bottom: 1px solid rgba(16, 34, 47, 0.1);
+}
+
+.zone-2 { border-left-color: var(--amber); }
+
+.zone-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.6rem;
+}
+
+.zone-badge {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  background: var(--teal);
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+
+.zone-2 .zone-badge { background: var(--amber); }
+
+.zone-temp {
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.zone-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.zone-note {
+  font-size: 0.84rem;
+  color: #5d7383;
+  font-style: italic;
+  padding-left: 0.3rem;
+}
+
+/* ======================================================================
+   SECTOR — section padding
+   ====================================================================== */
+.sector-wrap {
+  padding: clamp(2.5rem, 7vw, 5rem) 0 0;
+}
+
+/* ======================================================================
+   CLOSE / CTA ADDITIONS
+   ====================================================================== */
+.conclusion-points {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.conclusion-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.conc-icon {
+  font-size: 1.05rem;
+  color: var(--teal);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.conclusion-item p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.82;
+  font-size: 0.94rem;
+}
+
+.investment-path {
+  margin-top: 1.2rem !important;
+  padding: 0.85rem 1.2rem;
+  background: rgba(14, 164, 166, 0.08);
+  border-radius: 10px;
+  border-left: 3px solid var(--teal);
+  color: var(--ink) !important;
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+/* ======================================================================
+   SECTION-TITLE — ensure uniform top spacing for consistency
+   ====================================================================== */
+.perf-section .section-title,
+.energy-ratio-section .section-title,
+.mech-section .section-title,
+.lab-section .section-title,
+.prod-specs-section .section-title,
+.case-section .section-title,
+.safety-section .section-title,
+.boiler-section .section-title {
+  margin-bottom: 0;
+}
+
+/* ======================================================================
+   RESPONSIVE OVERRIDES
+   ====================================================================== */
+@media (max-width: 1100px) {
+  .kpi-band {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1030px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .formula-mosaic {
+    min-height: 300px;
+    margin-top: 0.5rem;
+  }
+
+  .fm-c1 { width: min(260px, 72%); }
+  .fm-c2 { width: min(195px, 56%); }
+  .fm-c3 { width: min(185px, 54%); bottom: 60px; }
+  .fm-c4 { width: min(200px, 58%); }
+
+  .tech-origin,
+  .case-grid,
+  .boiler-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-milestones {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-snapshot {
+    grid-template-columns: 1fr;
+  }
+
+  .case-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .case-feature {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .mech-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .prod-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ratio-flow {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .flow-arrow {
+    text-align: center;
+    transform: none;
+    font-size: 1.4rem;
+    padding: 0.1rem 0;
+  }
+
+  .ratio-callout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .kpi-band {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mech-grid,
+  .safety-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .methodology-visuals {
+    grid-template-columns: 1fr;
+  }
+
+  .prod-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .case-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .case-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .case-feature {
+    grid-column: auto;
+  }
+
+  .case-row {
+    grid-template-columns: 1fr;
+    gap: 0.12rem;
+  }
+
+  .boiler-row {
+    grid-template-columns: 1fr;
+    gap: 0.12rem;
+  }
+
+  .case-row dt,
+  .boiler-row dt {
+    font-size: 0.78rem;
+    color: var(--teal);
+  }
+}

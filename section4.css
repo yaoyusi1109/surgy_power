@@ -1,0 +1,286 @@
+/* =====================================================================
+   Surgy Power — Chapter 4 page styles
+   ===================================================================== */
+
+.s4-hero {
+  padding: clamp(2rem, 5vw, 3.5rem) 0 0;
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.s4-sub {
+  margin-top: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.82;
+}
+
+.s4-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.s4-hero-panel {
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 16px;
+  padding: 1rem 1.2rem;
+}
+
+.s4-hero-panel ol {
+  margin: 0.65rem 0 0;
+  padding-left: 1.05rem;
+  color: var(--ink-soft);
+}
+
+.s4-hero-panel li {
+  margin-top: 0.4rem;
+  line-height: 1.65;
+}
+
+.s4-auth,
+.s4-patent,
+.s4-case {
+  padding: clamp(2.4rem, 6vw, 4.8rem) 0 0;
+}
+
+.proof-grid,
+.patent-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.proof-card,
+.patent-card {
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 14px;
+  padding: 1rem 1.05rem;
+}
+
+.proof-card h3,
+.patent-card h3 {
+  font-size: 1.02rem;
+}
+
+.proof-card p,
+.patent-card p {
+  margin-top: 0.55rem;
+  color: var(--ink-soft);
+  line-height: 1.72;
+  font-size: 0.9rem;
+}
+
+.patent-type {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+}
+
+.doc-placeholder {
+  margin-top: 0.9rem;
+  background: linear-gradient(145deg, rgba(255, 251, 244, 0.9), rgba(226, 243, 250, 0.72));
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 14px;
+  padding: 0.95rem 1rem;
+}
+
+.doc-placeholder h3 {
+  margin-top: 0.45rem;
+  font-size: 1.05rem;
+}
+
+.doc-placeholder p {
+  margin-top: 0.5rem;
+  color: var(--ink-soft);
+  line-height: 1.74;
+}
+
+.doc-placeholder ul {
+  margin: 0.55rem 0 0;
+  padding-left: 1rem;
+  color: var(--ink-soft);
+}
+
+.doc-placeholder li {
+  margin-top: 0.3rem;
+}
+
+.doc-placeholder li strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.doc-placeholder li a {
+  display: inline-block;
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(14, 164, 166, 0.35);
+}
+
+.doc-placeholder li a:hover {
+  color: var(--amber);
+  border-bottom-color: rgba(242, 145, 61, 0.45);
+}
+
+.case-kpis {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+}
+
+.case-kpi {
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 12px;
+  padding: 0.75rem 0.8rem;
+}
+
+.case-kpi span {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+.case-kpi strong {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--ink);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.stage-filters {
+  margin-top: 0.85rem;
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.stage-btn {
+  border: 1px solid rgba(16, 34, 47, 0.18);
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  padding: 0.34rem 0.8rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.stage-btn.is-active {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+}
+
+.s4-gallery {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.s4-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.s4-figure {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(10, 30, 45, 0.08);
+}
+
+.s4-figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.s4-feature img {
+  aspect-ratio: 16 / 11;
+}
+
+.s4-figure figcaption {
+  padding: 0.55rem 0.7rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.s4-figure figcaption strong {
+  color: var(--ink);
+  font-size: 0.81rem;
+}
+
+.s4-figure figcaption span {
+  color: #5d7383;
+  font-size: 0.76rem;
+  line-height: 1.42;
+}
+
+.s4-figure.is-hidden {
+  display: none;
+}
+
+.context-panel {
+  margin-top: 0.85rem;
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+}
+
+.context-panel p {
+  margin-top: 0.45rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+@media (max-width: 1030px) {
+  .s4-hero,
+  .proof-grid,
+  .patent-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .s4-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .s4-feature {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .case-kpis,
+  .s4-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .s4-feature {
+    grid-column: auto;
+  }
+}

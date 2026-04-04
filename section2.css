@@ -1,0 +1,320 @@
+/* =====================================================================
+   Surgy Power — Section 2 page styles
+   ===================================================================== */
+
+.s2-hero {
+  padding: clamp(2rem, 5vw, 3.6rem) 0 0;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.s2-sub {
+  margin-top: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.82;
+}
+
+.s2-hero-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.s2-hero-panel {
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 16px;
+  padding: 1.05rem 1.2rem;
+}
+
+.s2-hero-panel ul {
+  margin: 0.65rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+}
+
+.s2-hero-panel li {
+  margin-top: 0.4rem;
+  line-height: 1.68;
+}
+
+.s2-core,
+.s2-diagram,
+.s2-energy {
+  padding: clamp(2.4rem, 6vw, 4.8rem) 0 0;
+}
+
+.core-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.core-card {
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.core-toggle {
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 0.95rem 1rem;
+  cursor: pointer;
+}
+
+.core-toggle span {
+  display: block;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.09em;
+  color: var(--teal);
+  font-size: 0.74rem;
+}
+
+.core-toggle strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.core-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  border-top: 1px solid rgba(16, 34, 47, 0.09);
+}
+
+.core-card.is-open .core-body {
+  max-height: 210px;
+}
+
+.core-body p {
+  margin: 0;
+  padding: 0.85rem 1rem 1rem;
+  color: var(--ink-soft);
+  line-height: 1.74;
+  font-size: 0.92rem;
+}
+
+.rxn-strip {
+  margin-top: 0.95rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.rxn-item {
+  background: #132a39;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+}
+
+.rxn-title {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+}
+
+.rxn-eq {
+  margin: 0.4rem 0 0;
+  color: #d6e5ef;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.03em;
+  font-size: 1.05rem;
+}
+
+.diagram-tabs {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  border: 1px solid rgba(16, 34, 47, 0.18);
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  padding: 0.36rem 0.85rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.tab-btn.is-active {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+}
+
+.diagram-panel {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.diagram-figure {
+  margin: 0;
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.diagram-figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: #fff;
+}
+
+.diagram-note {
+  background: linear-gradient(145deg, rgba(255, 251, 244, 0.9), rgba(226, 243, 250, 0.75));
+  border: 1px solid rgba(16, 34, 47, 0.12);
+  border-radius: 14px;
+  padding: 0.95rem 1rem;
+}
+
+.diagram-note h3 {
+  margin-top: 0.45rem;
+  font-size: 1.05rem;
+}
+
+.diagram-note p {
+  margin-top: 0.55rem;
+  color: var(--ink-soft);
+  line-height: 1.74;
+}
+
+.energy-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.energy-card {
+  background: var(--panel);
+  border: 1px solid rgba(16, 34, 47, 0.14);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.energy-hot {
+  border-color: rgba(14, 164, 166, 0.35);
+  box-shadow: 0 10px 24px rgba(14, 164, 166, 0.11);
+}
+
+.energy-main {
+  margin-top: 0.45rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+  color: var(--ink);
+}
+
+.energy-card ul {
+  margin: 0.65rem 0 0;
+  padding-left: 1.05rem;
+  color: var(--ink-soft);
+}
+
+.energy-card li {
+  margin-top: 0.33rem;
+  line-height: 1.62;
+  font-size: 0.9rem;
+}
+
+.calc-box {
+  margin-top: 0.95rem;
+  background: #132a39;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem 1.05rem;
+}
+
+.calc-box h3 {
+  margin-top: 0.45rem;
+  color: #fff;
+}
+
+.calc-box label {
+  display: block;
+  margin-top: 0.7rem;
+  color: #d6e5ef;
+  font-size: 0.88rem;
+}
+
+.calc-box input[type="range"] {
+  width: 100%;
+  margin-top: 0.5rem;
+  accent-color: var(--teal);
+}
+
+.calc-stats {
+  margin-top: 0.65rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+}
+
+.calc-stats div {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.55rem 0.6rem;
+}
+
+.calc-stats span {
+  display: block;
+  color: #94b4ca;
+  font-size: 0.76rem;
+}
+
+.calc-stats strong {
+  display: block;
+  margin-top: 0.25rem;
+  color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.calc-note {
+  margin-top: 0.7rem;
+  color: #a8becf;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1030px) {
+  .s2-hero,
+  .diagram-panel,
+  .energy-grid,
+  .rxn-strip,
+  .core-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .calc-stats {
+    grid-template-columns: 1fr;
+  }
+}
