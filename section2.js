@@ -36,27 +36,26 @@ tabButtons.forEach((btn) => {
   btn.addEventListener('click', () => activateTab(btn.dataset.tab));
 });
 
-const whInput = document.getElementById('inputWh');
-const statIn = document.getElementById('statIn');
-const statOut = document.getElementById('statOut');
-const statRatio = document.getElementById('statRatio');
-const statElec = document.getElementById('statElec');
+const costInput = document.getElementById('inputCost');
+const statBase = document.getElementById('statBase');
+const statLow = document.getElementById('statLow');
+const statHigh = document.getElementById('statHigh');
+const statMethod = document.getElementById('statMethod');
 
-const renderCalc = (inputWh) => {
-  const outWh = Math.round(inputWh * 9.008);
-  const ratio = outWh / inputWh;
-  const elecWh = Math.round(inputWh * 3);
+const renderCalc = (baseCostWan) => {
+  const low = Math.round(baseCostWan * 0.02);
+  const high = Math.round(baseCostWan * 0.08);
 
-  statIn.textContent = `${inputWh} Wh`;
-  statOut.textContent = `${outWh} Wh`;
-  statRatio.textContent = `${ratio.toFixed(1)}x`;
-  statElec.textContent = `${elecWh} Wh`;
+  statBase.textContent = `${baseCostWan} 万元`;
+  statLow.textContent = `${low} 万元`;
+  statHigh.textContent = `${high} 万元`;
+  statMethod.textContent = '连续运行+第三方复核';
 };
 
-if (whInput && statIn && statOut && statRatio && statElec) {
-  renderCalc(Number(whInput.value));
+if (costInput && statBase && statLow && statHigh && statMethod) {
+  renderCalc(Number(costInput.value));
 
-  whInput.addEventListener('input', () => {
-    renderCalc(Number(whInput.value));
+  costInput.addEventListener('input', () => {
+    renderCalc(Number(costInput.value));
   });
 }
